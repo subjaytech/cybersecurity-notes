@@ -1,0 +1,143 @@
+# Networking Basics: IPv4 Addressing and Network Segmentation
+
+## Overview
+
+Today's session focused on public and private IPv4 addresses, Network Address Translation (NAT), special-use IPv4 addresses, IP address allocation, and network segmentation.
+
+The difference between public and private IPv4 addresses finally became clear to me. The session also connected several networking concepts I had previously studied, especially how routers, switches, and subnetting work together to control network traffic.
+
+## Learning Objectives
+
+By completing this session, I was able to:
+
+- Differentiate between public and private IPv4 addresses.
+- Understand how NAT allows private devices to communicate over the internet.
+- Identify special-use IPv4 addresses.
+- Understand the limitations of classful addressing.
+- Explain how IANA and Regional Internet Registries (RIRs) distribute IP addresses.
+- Understand broadcast domains and network segmentation.
+- Explain how subnetting helps reduce unnecessary broadcast traffic.
+
+## Public and Private IPv4 Addresses
+
+Private IPv4 addresses are used within internal networks such as homes, schools, and offices.
+
+The three private IPv4 ranges are:
+
+- 10.0.0.0/8
+- 172.16.0.0/12
+- 192.168.0.0/16
+
+These addresses are not globally routable on the public internet.
+
+Public IPv4 addresses are globally routable and allow networks to communicate across the internet.
+
+## Network Address Translation
+
+Network Address Translation (NAT) allows devices using private IP addresses to communicate with the public internet.
+
+When a device sends traffic outside its private network, NAT translates its private IP address into a public IP address at the point where the internal network connects to the ISP.
+
+This allows multiple devices within a private network to access internet services without requiring each device to have its own public IPv4 address.
+
+## Special-Use IPv4 Addresses
+
+I also learned about IPv4 addresses reserved for specific purposes.
+
+### Loopback Addresses
+
+The 127.0.0.0/8 range is reserved for loopback communication.
+
+The most familiar example is:
+
+`127.0.0.1`
+
+A device uses loopback addresses to communicate with itself. This is useful for testing and troubleshooting local network configurations.
+
+### Link-Local Addresses
+
+The 169.254.0.0/16 range is used for link-local addressing.
+
+When a Windows device fails to obtain an IP address through DHCP, it often assigns itself a 169.254.x.x address automatically.
+
+This provides a local address even when normal IP configuration fails.
+
+## Classful and Classless Addressing
+
+The session also revisited the older classful addressing system.
+
+IPv4 was originally divided into:
+
+- Class A
+- Class B
+- Class C
+- Class D
+- Class E
+
+Classful addressing used fixed network boundaries, which resulted in significant address wastage.
+
+Classless addressing replaced this rigid approach and provided more flexibility in allocating IPv4 address space.
+
+## IP Address Allocation
+
+Public IPv4 addresses are not distributed randomly.
+
+IANA allocates blocks of IP addresses to five Regional Internet Registries (RIRs) based on geographical regions.
+
+The RIRs then distribute address space to ISPs, organizations, and other networks within their regions.
+
+This creates an organized system for managing global IP address allocation.
+
+## Network Segmentation
+
+The second part of the session focused on network segmentation and broadcast domains.
+
+Ethernet broadcasts are used for functions such as:
+
+- ARP communication
+- DHCP discovery
+- Device discovery
+
+Switches forward broadcasts within the local network, while routers stop broadcasts from crossing into other networks.
+
+This boundary defines a broadcast domain.
+
+## Why Subnetting Matters
+
+A large network with hundreds of devices creates a large broadcast domain.
+
+As the number of devices increases, broadcast traffic also increases.
+
+Subnetting divides a larger network into smaller networks. This keeps broadcasts within smaller sections of the network and reduces unnecessary traffic.
+
+This makes networks more efficient and easier to manage.
+
+## Skills Gained
+
+- Public and private IPv4 addressing
+- Network Address Translation
+- Special-use IPv4 addresses
+- Classful and classless addressing
+- IP address allocation
+- Broadcast domains
+- Network segmentation
+- Subnetting fundamentals
+
+## Assessment
+
+### Module Quiz
+
+- Attempt 1: 64%
+- Attempt 2: 82%
+
+I improved by 18 percentage points after reviewing the questions I missed on my first attempt. I still missed two questions on my second attempt, giving me specific areas to review.
+
+## Personal Takeaways
+
+The biggest takeaway from today's session was finally understanding the practical difference between public and private IPv4 addresses.
+
+NAT also made more sense once I connected it to how devices inside private networks access the public internet.
+
+The discussion around broadcast domains and subnetting helped connect several networking concepts together. I now have a clearer understanding of why large networks need segmentation and how subnetting helps control unnecessary broadcast traffic.
+
+I'm now moving on to Internet Protocol version 6 (IPv6).
